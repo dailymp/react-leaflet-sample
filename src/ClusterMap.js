@@ -21,8 +21,6 @@ class MapWidget extends Component {
   render() {
     const pins = this.state.pins;
 
-    console.log("MapWidget -> render -> worldGeoJSON", JSON.stringify(worldGeoJSON));
-
     return (
       <LeafletMap
         center={[50, 10]}
