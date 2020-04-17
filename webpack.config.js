@@ -7,7 +7,7 @@ module.exports = {
     extensions: ['.js', '.jsx', '.ts', '.tsx']
   },
   entry: [
-    './index.jsx',
+    './index.tsx',
   ],
   output: {
     filename: 'bundle.js',

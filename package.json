@@ -20,6 +20,9 @@
   "author": "Eugene Belkovich",
   "license": "MIT",
   "devDependencies": {
+    "@types/react": "^16.9.34",
+    "@types/react-dom": "^16.9.6",
+    "@types/react-leaflet": "^2.5.1",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-plugin-autobind-class-methods": "^5.0.1",

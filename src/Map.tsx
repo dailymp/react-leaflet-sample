@@ -1,8 +1,7 @@
-import React from 'react'
-import { Map as LeafletMap, GeoJSON, Marker, Popup } from 'react-leaflet';
-import worldGeoJSON from 'geojson-world-map';
+import * as React from 'react';
+import { Map as LeafletMap, TileLayer, Marker, Popup } from 'react-leaflet';
 
-class GeoJsonMap extends React.Component {
+class Map extends React.Component {
   render() {
     return (
       <LeafletMap
@@ -17,14 +16,8 @@ class GeoJsonMap extends React.Component {
         animate={true}
         easeLinearity={0.35}
       >
-        <GeoJSON
-          data={worldGeoJSON}
-          style={() => ({
-            color: '#4a83ec',
-            weight: 0.5,
-            fillColor: "#1a1d62",
-            fillOpacity: 1,
-          })}
+        <TileLayer
+          url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
         />
         <Marker position={[50, 10]}>
           <Popup>
@@ -36,4 +29,4 @@ class GeoJsonMap extends React.Component {
   }
 }
 
-export default GeoJsonMap
+export default Map
