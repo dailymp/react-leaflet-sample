@@ -2,7 +2,7 @@ import React from 'react';
 import L from 'leaflet';
 import MarkerClusterGroup from 'react-leaflet-markercluster';
 import 'react-leaflet-markercluster/dist/styles.min.css';
-import Pin from './Pin.js';
+import Pin from './Pin';
 import './map-widget.css';
 
 const hexToRgb = (hex, opacity) => {

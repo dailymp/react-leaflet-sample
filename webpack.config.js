@@ -3,15 +3,19 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   devtool: 'source-map',
+  resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx']
+  },
   entry: [
-    './index.js',
+    './index.jsx',
   ],
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
   devServer: {
-    contentBase: "./dist"
+    contentBase: "./dist",
+    inline: true,
   },
   module: {
     rules: [
@@ -28,7 +32,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.js$/,
+        test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
         use: [
           {

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Map as LeafletMap, GeoJSON } from "react-leaflet";
-import Pins from "./Pins.js";
+import Pins from "./Pins";
 import worldGeoJSON from "geojson-world-map";
 
 class MapWidget extends Component {
