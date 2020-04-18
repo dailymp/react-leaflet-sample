@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { CircleMarker } from 'react-leaflet';
-import './map-widget.css';
+import './map-widget.less';
 import { LatLngExpression } from 'leaflet';
 
 interface Props {
