@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Map as LeafletMap, GeoJSON } from "react-leaflet";
-import Pins from "../Pins";
+import Pins from "./Pins";
 import worldGeoJSON from "geojson-world-map";
 import { Point } from "../common/Point";
 

@@ -4,7 +4,7 @@ import MarkerClusterGroup from 'react-leaflet-markercluster';
 import 'react-leaflet-markercluster/dist/styles.min.css';
 import Pin from './Pin';
 import './map-widget.less';
-import { Point } from './common/Point';
+import { Point } from '../common/Point';
 
 interface Props {
   pins: Point[];
