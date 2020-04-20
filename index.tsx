@@ -14,3 +14,4 @@ ReactDOM.render(
         <MapWidgetContainer />
     </Provider>,
     document.getElementById('map'));
+
