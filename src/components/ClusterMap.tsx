@@ -2,9 +2,13 @@ import * as React from "react";
 import { Map as LeafletMap, GeoJSON } from "react-leaflet";
 import Pins from "../Pins";
 import worldGeoJSON from "geojson-world-map";
+import { Point } from "../common/Point";
+
+const newPointColor = '#00e600';
 
 interface Props {
-  pins: number[][];
+  pins: Point[];
+  onAddNewPoint: (newPoint: Point) => void;
 }
 
 class MapWidget extends React.Component<Props, {}> {
@@ -22,9 +26,11 @@ class MapWidget extends React.Component<Props, {}> {
         animate={true}
         easeLinearity={0.35}
         onclick={(evt) => {
-          // TODO: Add point to state.
-          console.log(evt.containerPoint);
-          console.log("Cliiiiick")
+          this.props.onAddNewPoint({
+            x: evt.latlng.lat, 
+            y: evt.latlng.lng, 
+            hexadecimalColor: newPointColor,
+          });
         }}
       >
         <GeoJSON

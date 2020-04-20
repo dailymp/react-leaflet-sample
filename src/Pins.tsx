@@ -4,9 +4,10 @@ import MarkerClusterGroup from 'react-leaflet-markercluster';
 import 'react-leaflet-markercluster/dist/styles.min.css';
 import Pin from './Pin';
 import './map-widget.less';
+import { Point } from './common/Point';
 
 interface Props {
-  pins: number[][];
+  pins: Point[];
 }
 
 interface MarkerStyle {
@@ -25,12 +26,12 @@ interface IconOptions {
   label: string;
 }
 
-const markerStyle: MarkerStyle = {
-  color: '#fc4b51',
-  fillColor: "#fc4b51",
+const markerStyle = (hexColor): MarkerStyle => ({
+  color: hexColor,
+  fillColor: hexColor,
   opacity: 1,
   radius: 5,
-};
+});
 
 const hexToRgb = (hex: string, opacity?: number): string => {
   if (!hex.startsWith('#')) return hex;
@@ -110,8 +111,8 @@ const Pins = (props: Props) => {
     .map((p, i) => (
       <Pin
         key={`${p.toString()}-${i}`}
-        center={[p[0], p[1]]}
-        {...markerStyle}
+        center={[p.x, p.y]}
+        {...markerStyle(p.hexadecimalColor)}
       />
     ));
 
