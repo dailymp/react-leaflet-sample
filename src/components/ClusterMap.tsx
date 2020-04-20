@@ -1,35 +1,14 @@
 import * as React from "react";
 import { Map as LeafletMap, GeoJSON } from "react-leaflet";
-import Pins from "./Pins";
+import Pins from "../Pins";
 import worldGeoJSON from "geojson-world-map";
 
 interface Props {
-
-}
-
-interface State {
   pins: number[][];
 }
 
-class MapWidget extends React.Component<Props, State> {
-
-  constructor(props: Props) {
-    super(props);
-    let pins: number[][] = [];
-    for (let i = 0; i < 5000; i++) {
-      pins.push([
-        Math.floor(Math.random() * 50),
-        Math.floor(Math.random() * 50),
-      ]);
-    }
-    this.state = {
-      pins,
-    };
-  }
-
+class MapWidget extends React.Component<Props, {}> {
   render() {
-    const pins: number[][] = this.state.pins;
-
     return (
       <LeafletMap
         center={[50, 10]}
@@ -52,7 +31,7 @@ class MapWidget extends React.Component<Props, State> {
             fillOpacity: 1,
           })}
         />
-        <Pins {...this.props} pins={pins} />
+        <Pins {...this.props} />
       </LeafletMap>
     );
   }
