@@ -1,3 +1,4 @@
 export const actionEnums = {
     ADD_NEW_POINT_TO_MAP: '[0] ADD NEW POINT TO MAP',
+    SET_POINT_DATA: '[1] APPLY EDITS POINTS DATA TO SHOW IN MAP',
 };

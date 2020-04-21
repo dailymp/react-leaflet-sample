@@ -3,7 +3,8 @@ import { Map as LeafletMap, GeoJSON } from "react-leaflet";
 import Pins from "./Pins";
 import worldGeoJSON from "geojson-world-map";
 import { Point } from "../common/Point";
-import { EditablePoints } from "./EditablePoint";
+import { AllEditablePoints } from "./EditablePoint/AllEditablePoint";
+import { AllEditablePointsContainer } from "../containers/EditablePointContainer";
 
 const newPointColor = '#00e600';
 
@@ -46,7 +47,7 @@ class MapWidget extends React.Component<Props, {}> {
           />
           <Pins {...this.props} />
         </LeafletMap>
-        <EditablePoints pins={this.props.pins} />
+        <AllEditablePointsContainer />
       </>
     );
   }

@@ -26,6 +26,8 @@ export const mapInfoReducer = (state = defaultMapInfoState(), action: BasicActio
   switch(action.type) {
     case actionEnums.ADD_NEW_POINT_TO_MAP:
       return handleAddNewPointToMap(state, action.payload);
+    case actionEnums.SET_POINT_DATA:
+      return handleSetPointData(state, action.payload);
   }
   return state;
 }
@@ -43,4 +45,11 @@ const handleAddNewPointToMap = (state: MapInfoState, newPoint: Point): MapInfoSt
     ...state,
     pins,
   };
+}
+
+const handleSetPointData = (state: MapInfoState, newPointData: Point[]): MapInfoState => {
+  return {
+    ...state,
+    pins: newPointData,
+  }
 }
