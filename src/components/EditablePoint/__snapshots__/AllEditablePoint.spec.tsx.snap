@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests for AllEditablePoints component should render as expected when passing required properties 1`] = `
+<Fragment>
+  <h1>
+    Edit points
+  </h1>
+  <button
+    onClick={[Function]}
+  >
+    Edit Point List
+  </button>
+</Fragment>
+`;

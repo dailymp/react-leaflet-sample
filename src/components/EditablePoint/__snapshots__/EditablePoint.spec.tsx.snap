@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests for EditablePoint component should render as expected when passing required properties 1`] = `
+<p>
+  <label>
+    X: 
+  </label>
+  <input
+    onChange={[Function]}
+    style={
+      Object {
+        "marginLeft": "1em",
+      }
+    }
+    type="text"
+    value={1}
+  />
+  <label
+    style={
+      Object {
+        "marginLeft": "1em",
+      }
+    }
+  >
+    Y: 
+  </label>
+  <input
+    onChange={[Function]}
+    style={
+      Object {
+        "marginLeft": "1em",
+      }
+    }
+    type="text"
+    value={3}
+  />
+  <label
+    style={
+      Object {
+        "marginLeft": "1em",
+      }
+    }
+  >
+    Color: 
+  </label>
+  <input
+    onChange={[Function]}
+    style={
+      Object {
+        "marginLeft": "1em",
+      }
+    }
+    type="text"
+    value="#00e700"
+  />
+  <button
+    onClick={[Function]}
+    style={
+      Object {
+        "marginLeft": "1em",
+      }
+    }
+  >
+    Delete
+  </button>
+</p>
+`;

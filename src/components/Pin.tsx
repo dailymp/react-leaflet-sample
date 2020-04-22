@@ -1,8 +1,18 @@
 import * as React from 'react';
 import { CircleMarker } from 'react-leaflet';
-import './map-widget.css';
+import './map-widget.less';
+import { LatLngExpression } from 'leaflet';
 
-class Pin extends React.Component {
+interface Props {
+  key: string;
+  center: LatLngExpression;
+  color: string;
+  fillColor: string;
+  radius: number;
+  opacity: number;
+}
+
+class Pin extends React.Component<Props, {}> {
   render() {
     return (
       <CircleMarker

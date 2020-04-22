@@ -1,51 +1,81 @@
-const path = require('path');
-const HtmlWebPackPlugin = require("html-webpack-plugin");
+let path = require('path');
+let HtmlWebpackPlugin = require('html-webpack-plugin');
+let MiniCssExtractPlugin = require('mini-css-extract-plugin');
+let webpack = require('webpack');
+
+let basePath = __dirname;
 
 module.exports = {
-  devtool: 'source-map',
+  resolve: {
+    extensions: ['.js', '.ts', '.tsx']
+  },
   entry: [
-    './index.js',
+    './index.tsx',
   ],
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.join(basePath, 'dist'),
+    filename: 'bundle.js'
   },
+  devtool: 'source-map',
   devServer: {
-    contentBase: "./dist"
+    contentBase: './dist',
+    inline: true,
+    host: 'localhost',
+    port: 8080,
+    stats: 'errors-only'
   },
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: [ 'style-loader', 'css-loader' ]
-      },
-      {
-        test: /\.html$/,
-        use: [
-          {
-            loader: "html-loader"
-          }
-        ]
-      },
-      {
-        test: /\.js$/,
+        test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
+        use: {
+            loader: 'babel-loader',
+            options: {
+                presets: ['@babel/preset-react']
+            }
+        }
+      },
+      {
+        test: /\.less$/,
         use: [
           {
-            loader: 'babel-loader',
-            query: {
-              retainLines: true
+            loader: "style-loader"
+          },
+          {
+            loader: "css-loader",
+            options: {
+              sourceMap: true,
+              modules: true,
             }
+          },
+          {
+            loader: "less-loader"
           }
         ]
       },
-
-    ]
+      {
+        test: /\.css$/,        
+        use: [MiniCssExtractPlugin.loader, "css-loader"]
+      },
+      {
+        test: /\.(png|jpg|gif|svg)$/,
+        loader: 'file-loader',
+        options: {
+          name: 'assets/img/[name].[ext]?[hash]'
+        }
+      },
+    ],
   },
   plugins: [
-    new HtmlWebPackPlugin({
-      template: "./index.html",
-      filename: "./index.html"
-    })
-  ]
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: 'index.html',
+      hash: true,
+    }),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css"
+    }),
+  ],
 };
