@@ -10,7 +10,11 @@
     "watch": "webpack --watch",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "json-server": "json-server db.json"
+    "json-server": "json-server db.json",
+    "lint": "./node_modules/.bin/eslint src/**/*.ts src/**/*.tsx",
+    "lint-fixup": "./node_modules/.bin/eslint src --ext .ts,.tsx --fix",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [
     "react",
