@@ -47,10 +47,8 @@ export const EditablePointList = (props: PropsEditablePointList) => {
                     const result = pin.isEnable ?
                         <EditablePoint
                             key={`editable-point-${indexPin}`}
-                            getAndSetPin={getAndSetPin}
                             pin={pin}
-                            setPin={setPin}
-                            indexPin={indexPin} />
+                            setPin={setPin} />
                         : undefined;
                     indexPin++;
                     return result;

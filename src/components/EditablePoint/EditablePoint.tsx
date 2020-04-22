@@ -2,10 +2,8 @@ import * as React from "react";
 import { marginComponentsInEditablePointList, PointWithEnable } from "./EditablePointList";
 
 interface PropsPoint {
-    getAndSetPin: [PointWithEnable, React.Dispatch<React.SetStateAction<PointWithEnable>>][],
     pin: PointWithEnable,
-    setPin: React.Dispatch<React.SetStateAction<PointWithEnable>>,
-    indexPin: number
+    setPin: React.Dispatch<React.SetStateAction<PointWithEnable>>
 }
 
 export const EditablePoint = (props: PropsPoint) => (

@@ -10,7 +10,9 @@
     "watch": "webpack --watch",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "json-server": "json-server db.json"
+    "json-server": "json-server db.json",
+    "test": "jest --verbose",
+    "test:watch": "jest --verbose --watchAll -i"
   },
   "keywords": [
     "react",
@@ -25,6 +27,8 @@
     "@babel/preset-react": "^7.9.4",
     "@babel/preset-typescript": "^7.9.0",
     "@types/axios": "^0.14.0",
+    "@types/enzyme": "^3.10.5",
+    "@types/jest": "^25.2.1",
     "@types/leaflet": "^1.5.12",
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.6",
@@ -34,12 +38,18 @@
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.1.0",
     "css-loader": "^3.5.2",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.4.4",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.2.0",
+    "jest": "^25.4.0",
     "less": "^3.11.1",
     "less-loader": "^5.0.0",
     "mini-css-extract-plugin": "^0.9.0",
+    "raf": "^3.4.1",
     "style-loader": "^1.1.4",
+    "ts-jest": "^25.4.0",
     "ts-loader": "^7.0.0",
     "typescript": "^3.8.3",
     "url-loader": "^4.1.0",
@@ -65,6 +75,17 @@
       "@babel/preset-env",
       "@babel/preset-react",
       "@babel/preset-typescript"
+    ]
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "setupFiles": [
+      "<rootDir>/config/test/polyfills.js",
+      "<rootDir>/config/test/setupTest.js"
+    ],
+    "restoreMocks": true,
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
     ]
   }
 }

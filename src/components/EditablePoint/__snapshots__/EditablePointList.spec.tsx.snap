@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests for EditablePointList component should render as expected when passing required properties 1`] = `
+<Fragment>
+  <p>
+    <button
+      onClick={[Function]}
+    >
+      Apply Changes
+    </button>
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "marginLeft": "1em",
+        }
+      }
+    >
+      Cancel Changes
+    </button>
+  </p>
+  <Component
+    key="editable-point-0"
+    pin={
+      Object {
+        "hexadecimalColor": "#00e700",
+        "isEnable": true,
+        "x": 1,
+        "y": 3,
+      }
+    }
+    setPin={[Function]}
+  />
+  <Component
+    key="editable-point-1"
+    pin={
+      Object {
+        "hexadecimalColor": "#00e700",
+        "isEnable": true,
+        "x": 4,
+        "y": 6,
+      }
+    }
+    setPin={[Function]}
+  />
+</Fragment>
+`;
