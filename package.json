@@ -12,7 +12,11 @@
     "build-storybook": "build-storybook",
     "json-server": "json-server db.json",
     "test": "jest --verbose",
-    "test:watch": "jest --verbose --watchAll -i"
+    "test:watch": "jest --verbose --watchAll -i",
+    "lint": "./node_modules/.bin/eslint src/**/*.ts src/**/*.tsx",
+    "lint-fixup": "./node_modules/.bin/eslint src --ext .ts,.tsx --fix",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [
     "react",
